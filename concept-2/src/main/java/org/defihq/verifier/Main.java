@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) {
         try(ServerSocket serverSocket = new ServerSocket(8000)) {
             while (true){
+                System.out.println("Server is open for connection now!");
                 new Verifier(serverSocket.accept()).start();
             }
         } catch (IOException e) {
